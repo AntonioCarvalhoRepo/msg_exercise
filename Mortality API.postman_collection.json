@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "376509a9-b3d6-43cd-9d17-2ecef4116b22",
+		"name": "Mortality API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38969898"
+	},
+	"item": [
+		{
+			"name": "Create Record",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"year\" : 2007,\r\n    \"country\" : \"PT\",\r\n    \"maleDeathRate\" : 10.2,\r\n    \"femaleDeathRate\" : 2.3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/mortality",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mortality"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Records By Year",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/mortality/2007",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mortality",
+						"2007"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "File Upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/SnkDo/Downloads/mortality/csv/test.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/upload",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
